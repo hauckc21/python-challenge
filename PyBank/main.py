@@ -7,8 +7,13 @@ csvpath = os.path.join('Resources', '02-Homework_03-Python_Instructions_PyBank_R
 with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
+    
     print("Financial Analysis")
     print("-------------------------")
+    
 
     for row in csvreader:
-        print(row)
+        total_months = [len(list(csvreader)) - 1]
+        print("Total Months: " + str(total_months))
+
+#next(csvreader)
