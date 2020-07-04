@@ -7,12 +7,8 @@ csvpath = os.path.join('Resources', '02-Homework_03-Python_Instructions_PyBank_R
 with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
-
-    print(csvreader)
-
-    csv_header = next(csvreader)
-    print(f"CSV Header: [csv_header]")
+    print("Financial Analysis")
+    print("-------------------------")
 
     for row in csvreader:
         print(row)
-        
