@@ -13,7 +13,7 @@ with open(csvpath) as csvfile:
     
 
     for row in csvreader:
-        total_months = [len(list(csvreader)) - 1]
+        total_months = [len(list(csvreader))]
         print("Total Months: " + str(total_months))
 
-#next(csvreader)
+
