@@ -58,16 +58,16 @@ with open(csvpath) as csvfile:
     average_profit_loss = round(sum_profit_loss/(month_count - 1), 2)
 
     #Highest and lowest changes in "Profit/Losses" over the entire period
-    highest_change = max(profit_loss)
-    lowest_change = min(profit_loss)
+    greatest_increase = max(profit_loss)
+    greatest_decrease = min(profit_loss)
 
     #Find the index value of highest and lowest changes in "Profit/Losses" over the entire period
-    highest_month_index = profit_loss.index(highest_change)
-    lowest_month_index = profit_loss.index(lowest_change)
+    greatest_increase_index = profit_loss.index(greatest_increase)
+    greatest_decrease_index = profit_loss.index(greatest_decrease)
 
     #Assign best and worst month
-    best_month = total_months[highest_month_index]
-    worst_month = total_months[lowest_month_index]
+    greatest_increase_month = total_months[greatest_increase_index]
+    greatest_decrease_month = total_months[greatest_decrease_index]
 
 #Print the analysis to the terminal
 print("Financial Analysis")
@@ -75,8 +75,8 @@ print("----------------------------")
 print(f"Total Months:  {month_count}")
 print(f"Total:  ${net_profit_loss}")
 print(f"Average Change:  ${average_profit_loss}")
-print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
-print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
+print(f"Greatest Increase in Profits:  {greatest_increase_month} (${greatest_increase})")
+print(f"Greatest Decrease in Profits:  {greatest_decrease_month} (${greatest_decrease})")
 
 
 #Export text file with results
@@ -88,7 +88,7 @@ with open(budget_analysis, "w") as outfile:
     outfile.write(f"Total Months:  {month_count}\n")
     outfile.write(f"Total:  ${net_profit_loss}\n")
     outfile.write(f"Average Change:  ${average_profit_loss}\n")
-    outfile.write(f"Greatest Increase in Profits:  {best_month} (${highest_change})\n")
-    outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})\n")
+    outfile.write(f"Greatest Increase in Profits:  {greatest_increase_month} (${greatest_increase})\n")
+    outfile.write(f"Greatest Decrease in Profits:  {greatest_decrease_month} (${greatest_decrease})\n")
 
 
