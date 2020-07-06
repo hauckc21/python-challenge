@@ -34,11 +34,18 @@ print("-----------------------")
 print(f"Total Votes: {total_votes}")
 print("-----------------------")
 for candidate_name, vote_count in candidates.items():
-    percentage = round((vote_count / total_votes * 100), 3) 
+    percentage = round((vote_count / total_votes * 100), 4) 
     print(f"{candidate_name}: {percentage}% ({vote_count})")     
 print("-----------------------")
 
+election_analysis = os.path.join("Analysis", "election_analysis.txt")
+with open(election_analysis, "w") as outfile:
 
-#for candidate_name, vote_count in candidates.items():
-    #winner = max{vote_count}
-    #print(f"Winner: {winner}")
+    outfile.write("Election Results\n")
+    outfile.write("-----------------------\n")
+    outfile.write(f"Total Votes: {total_votes}\n")
+    outfile.write("-----------------------\n")
+    for candidate_name, vote_count in candidates.items():
+        percentage = round((vote_count / total_votes * 100), 4)
+        outfile.write(f"{candidate_name}: {percentage}% ({vote_count})\n")   
+    outfile.write("-----------------------\n")
